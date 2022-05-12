@@ -1,0 +1,64 @@
+.BookAppointmentForm__flex-container-form {
+    margin: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+}
+
+.BookAppointmentForm__book-appointment-header {
+    color: $text-muted;
+}
+
+.BookAppointmentForm__details-header {
+    color: $text-muted;
+}
+
+.BookAppointmentForm__form-group-date {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 600px;
+}
+
+.BookAppointmentForm__form-group-details {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 200px;
+}
+
+#first-name, 
+#last-name, 
+#email, 
+#phone-number, 
+#comments, 
+#day-field, 
+#month-field, 
+#time-field {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 8px 8px;
+    box-sizing: border-box;
+    border: 2px solid $persona-blue;
+    border-radius: 8px;
+}
+
+.submit-btn, .reset-btn {
+    color: $grey-700;
+    background-color: $persona-blue;
+    display: flex;
+    justify-content: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+    width: 200px;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 9px;
+
+    &:hover {
+    text-decoration: none;
+    background-color: $persona-blue-dark;
+    }
+}

@@ -1,0 +1,88 @@
+.Footer__get-in-touch, .Footer__legal-stuff {
+    text-decoration: none;
+    margin: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    font-weight: 500;
+    color: $text-muted;
+}
+
+a:hover {
+    color: $grey-400;
+}
+
+.Footer__contact-us {
+    margin: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    font-weight: 500;
+    color: $text-muted;
+}
+
+.Footer__flex-container-parent {
+    display: flex;
+    flex-direction: row;
+}
+
+.Footer__flex-container-touch {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+}
+
+.Footer__flex-container-legal {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.Footer__flex-container-contact {
+    order: 3;
+}
+
+.Footer__line-break {
+    border-top: 1px solid $grey-700;
+}
+
+.Footer__flex-container {
+    display: flex;
+}
+
+.Footer__flex-container-disclaimers {
+    text-align: left;
+    margin: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    font-weight: 400;
+    color: $text-muted;
+}
+
+// silver award logo
+.Footer__silver {
+    height: 90px;
+    position: absolute;
+    right: 150px;
+}
+
+.Footer__persona-logo {
+    margin: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    cursor: pointer;
+}
+
+.Footer__facebook, 
+.Footer__twitter,
+.Footer__instagram,
+.Footer__linkedin {
+    font-size: 1.3rem;
+    color: $persona-blue;
+    line-height: 1;
+    margin-right: 20px;
+}

@@ -1,0 +1,514 @@
+// Brand Colours
+$persona-blue: #64c2c8; // Primary brand colour
+$persona-blue-dark: #4da6ac; // Darker shade of primary brand colour
+$salmon: #d98585; // Complimentary colour, often used for subtitles
+$persona-blue-dark-text: #184042; // darkest shade for text on primary brand colour
+
+// Greys
+$white: #fff;
+$grey-100: #f2f2f2;
+$grey-200: #f4f4f4;
+$grey-250: #e9e9e9;
+$grey-300: #d9d9d9;
+$grey-400: #c0c0c0;
+$grey-500: #828282;
+$grey-600: #484847;
+$grey-700: #383737;
+$grey-800: #273441;
+$grey-900: #202832;
+$black: #1d242c;
+$true-black: #000;
+
+$grey-dark-1: #383737;
+
+// $text-muted: $grey-600;
+$text-muted: #605f5f;
+$text-muted-light: $grey-500;
+
+// Other colours (validation, maps, etc)
+$red: #fb5448;
+$orange: #ff883c;
+$yellow: #ffe23d;
+$green: #67b87d;
+$nocellara: #3b5e12;
+$fuchsia: #a6075c;
+$purple: #8f15d1;
+$atlantic: #0d2b42;
+$teal: #64ccc9;
+
+// Theme colours
+// default opacity value to transform the primary colour
+$persona-theme-faded-opacity: 0.2;
+
+$text-transparent-dark: rgba(#000, 0.75);
+
+$persona-themes: (
+    'default': (
+        // keep these values in so the defualts can be set
+        'primary': $persona-blue,
+        'secondary': $persona-blue-dark,
+        'faded-opacity': $persona-theme-faded-opacity,
+        'text-color-on-primary': $persona-blue-dark-text,
+        'text-color-on-secondary': $text-transparent-dark,
+        'has-pattern-variations': true,
+        1: (
+            'color': $grey-200,
+            'color-text': $true-black,
+        ),
+        2: (
+            'color': $persona-blue,
+            'color-text': $true-black,
+            'color-hover': $persona-blue-dark,
+        ),
+        3: (
+            'color': $grey-700,
+            'color-text': $white,
+        ),
+        4: (
+            'color': $grey-200,
+            'color-text': $black,
+        ),
+        5: (
+            'color': $grey-700,
+            'color-text': $white,
+        ),
+        6: (
+            'color': $grey-200,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #3b797d,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #2c4d4f,
+            'color-text': $white,
+        ),
+    ),
+    'natures-way': (
+        'primary': #f08063,
+        'secondary': #90b4cd,
+        'text-color-on-primary': #271009,
+        'text-color-on-secondary': #101d26,
+        'has-pattern-variations': true,
+        1: (
+            'color': #90b4cd,
+            'color-text': $black,
+        ),
+        2: (
+            'color': #f08063,
+            'color-text': $true-black,
+            'color-hover': #f5a792,
+        ),
+        3: (
+            'color': #dff2fd,
+            'color-text': $true-black,
+        ),
+        4: (
+            'color': #fdf3ee,
+            'color-text': $black,
+        ),
+        5: (
+            'color': #125051,
+            'color-text': $white,
+        ),
+        6: (
+            'color': #eef8fd,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #7c230c,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #391c0e,
+            'color-text': $white,
+        ),
+    ),
+    'entwined-tranquility': (
+        'primary': #476f73,
+        'secondary': #e3e6bd,
+        'text-color-on-primary': #fff,
+        'text-color-on-secondary': #2b4346,
+        'has-pattern-variations': true,
+        1: (
+            'color': #9acc9a,
+            'color-text': $true-black,
+        ),
+        2: (
+            'color': #476f73,
+            'color-text': $white,
+            'color-hover': #629297,
+        ),
+        3: (
+            'color': #c7d8e0,
+            'color-text': $true-black,
+        ),
+        4: (
+            'color': #f5f5f3,
+            'color-text': $black,
+        ),
+        5: (
+            'color': #e3e6bd,
+            'color-text': $true-black,
+        ),
+        6: (
+            'color': #f9f5f1,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #476f73,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #223132,
+            'color-text': $white,
+        ),
+    ),
+    'welcome-reward': (
+        'primary': #223359,
+        'secondary': #bd8d5e,
+        'text-color-on-primary': #fff,
+        'text-color-on-secondary': #040302,
+        'has-pattern-variations': false,
+        1: (
+            'color': #ff9160,
+            'color-text': $true-black,
+        ),
+        2: (
+            'color': #9f9460,
+            'color-text': $true-black,
+            'color-hover': #c3b77e,
+        ),
+        3: (
+            'color': #506c74,
+            'color-text': $white,
+        ),
+        4: (
+            'color': #f1efe7,
+            'color-text': $black,
+        ),
+        5: (
+            'color': #3f4e56,
+            'color-text': $white,
+        ),
+        6: (
+            'color': #eef1f2,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #7b6c21,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #494321,
+            'color-text': $white,
+        ),
+    ),
+    'newfangled-edge': (
+        'primary': #f2b708,
+        'secondary': #108aa8,
+        'text-color-on-primary': #fff,
+        'text-color-on-secondary': #000,
+        'has-pattern-variations': true,
+        1: (
+            'color': #51b791,
+            'color-text': $true-black,
+        ),
+        2: (
+            'color': #f2b708,
+            'color-text': $true-black,
+            'color-hover': #eec54b,
+        ),
+        3: (
+            'color': #108aa8,
+            'color-text': $true-black,
+        ),
+        4: (
+            'color': #fef3e6,
+            'color-text': $black,
+        ),
+        5: (
+            'color': #505456,
+            'color-text': $white,
+        ),
+        6: (
+            'color': #fef8f2,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #886808,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #5c490d,
+            'color-text': $white,
+        ),
+    ),
+    'spirit-of-renewal': (
+        'primary': #d86e1d,
+        'secondary': #3c6055,
+        'text-color-on-primary': #000,
+        'text-color-on-secondary': #fff,
+        'has-pattern-variations': true,
+        1: (
+            'color': #6a7172,
+            'color-text': $white,
+        ),
+        2: (
+            'color': #d86e1d,
+            'color-text': $true-black,
+            'color-hover': #e49a61,
+        ),
+        3: (
+            'color': #3c6055,
+            'color-text': $white,
+        ),
+        4: (
+            'color': #fcf1e9,
+            'color-text': $black,
+        ),
+        5: (
+            'color': #002f3c,
+            'color-text': $white,
+        ),
+        6: (
+            'color': #f5f7fa,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #ab510c,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #783808,
+            'color-text': $white,
+        ),
+    ),
+    'orchard-dreams': (
+        'primary': #5c7689,
+        'secondary': #ccddca,
+        'text-color-on-primary': #fff,
+        'text-color-on-secondary': #000,
+        'has-pattern-variations': false,
+        1: (
+            'color': #ca9f97,
+            'color-text': $true-black,
+        ),
+        2: (
+            'color': #5c7689,
+            'color-text': $white,
+            'color-hover': #8da0ad,
+        ),
+        3: (
+            'color': #ccddca,
+            'color-text': $true-black,
+        ),
+        4: (
+            'color': #f2f7fc,
+            'color-text': $black,
+        ),
+        5: (
+            'color': #f1e6e8,
+            'color-text': $true-black,
+        ),
+        6: (
+            'color': #f5f7fa,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #4a5f6e,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #2a343a,
+            'color-text': $white,
+        ),
+    ),
+    'harbour-tide': (
+        'primary': #572d47,
+        'secondary': #9ab2ae,
+        'text-color-on-primary': #fff,
+        'text-color-on-secondary': #000,
+        'has-pattern-variations': true,
+        1: (
+            'color': #8399ad,
+            'color-text': $true-black,
+        ),
+        2: (
+            'color': #572d47,
+            'color-text': $white,
+            'color-hover': #8a6c7f,
+        ),
+        3: (
+            'color': #9ab2ae,
+            'color-text': $true-black,
+        ),
+        4: (
+            'color': #efeaed,
+            'color-text': $black,
+        ),
+        5: (
+            'color': #046568,
+            'color-text': $white,
+        ),
+        6: (
+            'color': #f1f7fb,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #572d47,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #331a29,
+            'color-text': $white,
+        ),
+    ),
+    'echos-of-heritage': (
+        'primary': #bb997d,
+        'secondary': #d86646,
+        'text-color-on-primary': #000,
+        'text-color-on-secondary': #000,
+        'has-pattern-variations': false,
+        1: (
+            'color': #1d486b,
+            'color-text': $white,
+        ),
+        2: (
+            'color': #bb997d,
+            'color-text': $true-black,
+            'color-hover': #d0b8a4,
+        ),
+        3: (
+            'color': #d86646,
+            'color-text': $true-black,
+        ),
+        4: (
+            'color': #f9f5f2,
+            'color-text': $black,
+        ),
+        5: (
+            'color': #15304a,
+            'color-text': $white,
+        ),
+        6: (
+            'color': #f0eeed,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #846851,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #4f3e30,
+            'color-text': $white,
+        ),
+    ),
+    'a-touch-of-greenery': (
+        'primary': #89b051,
+        'secondary': #8bb5be,
+        'text-color-on-primary': #000,
+        'text-color-on-secondary': #000,
+        'has-pattern-variations': true,
+        1: (
+            'color': #98d89c,
+            'color-text': $true-black,
+            'color-hover': #adc886,
+        ),
+        2: (
+            'color': #89b051,
+            'color-text': $true-black,
+        ),
+        3: (
+            'color': #8bb5be,
+            'color-text': $true-black,
+        ),
+        4: (
+            'color': #eef3e5,
+            'color-text': $black,
+        ),
+        5: (
+            'color': #ccccc4,
+            'color-text': $true-black,
+        ),
+        6: (
+            'color': #f7f6eb,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #566f32,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #364521,
+            'color-text': $white,
+        ),
+    ),
+    'welcome-reward-2': (
+        'primary': #bd8d5e,
+        'secondary': #741726,
+        'text-color-on-primary': #000,
+        'text-color-on-secondary': #fff,
+        'has-pattern-variations': true,
+        1: (
+            'color': #223359,
+            'color-text': $white,
+        ),
+        2: (
+            'color': #bd8d5e,
+            'color-text': $true-black,
+            'color-hover': #d1b08f,
+        ),
+        3: (
+            'color': #741726,
+            'color-text': $white,
+        ),
+        4: (
+            'color': #f2e8df,
+            'color-text': $black,
+        ),
+        5: (
+            'color': #191e34,
+            'color-text': $white,
+        ),
+        6: (
+            'color': #f3f3f5,
+            'color-text': $black,
+        ),
+        7: (
+            'color': #715437,
+            'color-text': $white,
+        ),
+        8: (
+            'color': #423324,
+            'color-text': $white,
+        ),
+    ),
+);
+
+// Borders
+$main-border-color: $grey-200;
+$main-border-color: rgba(#000, 0.1);
+
+// Box Shadows
+$overlay: rgba(25, 25, 25, 0.58);
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+$box-shadow-card: 0 2px 4px rgba(48, 49, 51, 0.05);
+$box-shadow-card-hover: 0 20px 46px -25px rgba($black, 0.37);
+$box-shadow-card-active: 0 3px 19px -5px rgba($black, 0.37);
+// $box-shadow-development-card: 0 4px 4px rgba(0, 0, 0, 0.01);
+$box-shadow-development-card: none;
+$box-shadow-article-card: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+$box-shadow-inset-strong: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+
+//Faq Search Colours
+$faq-search-text: #656363;
+$faq-search-text-selected: #383737;
+$faq-search-highlighted: rgba($persona-blue, 0.2);
+$faq-search-highlight-selected: rgba($persona-blue, 0.6);
+$faq-search-box-line: 0 2px 0 0 rgba($persona-blue, 1);
+$faq-search-box-shadow: 0 10px 20px 0 rgba($true-black, 0.15);
+$faq-search-underline: #f08063;
+$faq-text-link: #2f8085;
