@@ -29,15 +29,9 @@ export function BookAppointmentForm() {
         startTime.add(timeSlot.slotInterval, 'minutes');
     }
 
-    console.log(allTimes);
-
     let allDays = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
 
     let allMonths = [
-        {
-            label: 'Choose a month...',
-            value: '',
-        },
         {
             label: 'January',
             value: 'january',
@@ -114,7 +108,7 @@ useEffect(() => {
 function submit(e: any) {
     // prevent stops the submit button from refreshing the page
     e.preventDefault();
-    console.log('submit', {
+    console.log({
         day: data.day,
         month: data.month,
         time: data.time,
@@ -127,15 +121,14 @@ function submit(e: any) {
 }
 
 function handle(e: any) {
-    // const newdata: any = {data}
     // e represents the event handler argument and the e.target represents a DOM element
     // so e.target.value is the value or id property of the DOM element
-    // newdata[e.target.id] = e.target.value
     setData({
         ...data,
         [e.target.name]: e.target.value
     });
-    console.log('change', data, e)
+    console.log(e.target.name);
+    console.log(e.target.value);
 }
 
 return (
@@ -143,34 +136,28 @@ return (
         <form onSubmit={(e) => submit(e)} action="/add" method="post">
             <h1 className={`${baseClass}__book-appointment-header`}>Select a date and time</h1>
                 <div className={`${baseClass}__form-group-date`}>
-                    {/* The disabled attribute makes the option unable to select. */}
-                    {/* The selected attribute shows the text inside <option> element opening and closing tags. */}
-                    <select onClick={(e) => handle(e)} name='day' id='day-field' value={data.day}>
+                    <select onChange={(e) => handle(e)} name='day' id='day-field'>
                     {allDays.map((dayItem) => (
                         <option
-                        // find a way to trigger an on use effect
-                        onChange={(e) => handle(e)}
                         value={dayItem}
                         > {dayItem}
                         </option>
                     ))}
                     </select>
-                    <select onClick={(e) => handle(e)} name='month' id='month-field' value={data.month}>
+                    <select onChange={(e) => handle(e)} name='month' id='month-field'>
                     {/* mapping over allMonths array for each itterating pass current array item through */}
                     {allMonths.map((monthItem) => (
                         <option
-                        // onChange event and event handler is called
-                        onChange={(e) => handle(e)}
-                        // value is being read there are 2 objects value and label
+                        // value is being read there is one object value and label for each
                         value={monthItem.value}
                         > {monthItem.label}
                         </option>
                     ))}
                     </select>
-                    <select onClick={(e) => handle(e)} name='time' id='time-field' value={data.time}>
+                    <select onChange={(e) => handle(e)} name='time' id='time-field'>
+                    {/* allTimes is mapping through an array of times which are number data types */}
                     {allTimes.map((timeItem) => (
                         <option
-                        onChange={(e) => handle(e)}
                         value={timeItem}
                         > {timeItem}
                         </option>
@@ -225,7 +212,7 @@ return (
                     ></textarea>
                 </div>
             <button type='submit' className='submit-btn'>Book Appointment</button>
-            <button type="reset" onClick={refreshPage} className='reset-btn'>Reset</button>
+            <button type="reset" onChange={refreshPage} className='reset-btn'>Reset</button>
         </form>
     </section>
 );
