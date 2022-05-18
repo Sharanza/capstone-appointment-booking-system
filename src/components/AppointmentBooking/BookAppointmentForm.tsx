@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 import * as React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function BookAppointmentForm() {
 
@@ -91,11 +91,9 @@ export function BookAppointmentForm() {
     // state is a built-in React object that is used to contain data or information about the component
     // the useState hook is being used here
     const [data, setData] = useState({
-        date: {
-            day: '',
-            month: '',
-            time: ''
-        },
+        day: '',
+        month: '',
+        time: '',
         firstName: '',
         lastName: '',
         phoneNumber: '',
@@ -108,11 +106,18 @@ function refreshPage() {
     window.location.reload()
 }
 
+// use effect hook used to create a side effect
+useEffect(() => {
+    console.log(data);
+  });
+
 function submit(e: any) {
     // prevent stops the submit button from refreshing the page
     e.preventDefault();
     console.log('submit', {
-        date: data.date,
+        day: data.day,
+        month: data.month,
+        time: data.time,
         firstName: data.firstName,
         lastName: data.lastName,
         phoneNumber: data.phoneNumber,
@@ -130,7 +135,7 @@ function handle(e: any) {
         ...data,
         [e.target.name]: e.target.value
     });
-    console.log('change', data)
+    console.log('change', data, e)
 }
 
 return (
@@ -140,28 +145,29 @@ return (
                 <div className={`${baseClass}__form-group-date`}>
                     {/* The disabled attribute makes the option unable to select. */}
                     {/* The selected attribute shows the text inside <option> element opening and closing tags. */}
-                    <select name='day' id='day-field' value={data.date.day}>
+                    <select onClick={(e) => handle(e)} name='day' id='day-field' value={data.day}>
                     {allDays.map((dayItem) => (
                         <option
+                        // find a way to trigger an on use effect
                         onChange={(e) => handle(e)}
                         value={dayItem}
-                        >{dayItem}
+                        > {dayItem}
                         </option>
                     ))}
                     </select>
-                    <select name='month' id='month-field' value={data.date.month}>
+                    <select onClick={(e) => handle(e)} name='month' id='month-field' value={data.month}>
                     {/* mapping over allMonths array for each itterating pass current array item through */}
                     {allMonths.map((monthItem) => (
                         <option
                         // onChange event and event handler is called
                         onChange={(e) => handle(e)}
-                        // value is being read 2 objects value and label
+                        // value is being read there are 2 objects value and label
                         value={monthItem.value}
-                        >{monthItem.label}
+                        > {monthItem.label}
                         </option>
                     ))}
                     </select>
-                    <select name='time' id='time-field' value={data.date.time}>
+                    <select onClick={(e) => handle(e)} name='time' id='time-field' value={data.time}>
                     {allTimes.map((timeItem) => (
                         <option
                         onChange={(e) => handle(e)}
