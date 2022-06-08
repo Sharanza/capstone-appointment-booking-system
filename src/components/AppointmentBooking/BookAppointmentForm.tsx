@@ -1,6 +1,7 @@
 import * as moment from 'moment';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export function BookAppointmentForm() {
 
@@ -105,19 +106,26 @@ useEffect(() => {
     console.log(data);
   });
 
-function submit(e: any) {
+async function submit(e: any) {
     // prevent stops the submit button from refreshing the page
     e.preventDefault();
-    console.log({
-        day: data.day,
-        month: data.month,
-        time: data.time,
-        firstName: data.firstName,
-        lastName: data.lastName,
-        phoneNumber: data.phoneNumber,
-        email: data.email,
-        comments: data.comments,
-    })
+
+    try {
+        const booking = data;
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+
+        const res = await axios.post('http://localhost:8081/bookingRoutes/booking', booking, config);
+
+        console.log(res);
+    } catch (err) {
+        console.log(err);
+    }
+
 }
 
 function handle(e: any) {
@@ -133,7 +141,7 @@ function handle(e: any) {
 
 return (
     <section className={`${baseClass}__flex-container-form`}>
-        <form onSubmit={(e) => submit(e)} action="/add" method="post">
+        <form onSubmit={(e) => submit(e)}>
             <h1 className={`${baseClass}__book-appointment-header`}>Select a date and time</h1>
                 <div className={`${baseClass}__form-group-date`}>
                     <select onChange={(e) => handle(e)} name='day' id='day-field'>
