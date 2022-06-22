@@ -8,35 +8,12 @@ import "react-datepicker/dist/react-datepicker.css";
 export function BookAppointmentForm() {
   const baseClass = "BookAppointmentForm";
 
-  let timeSlot = {
-    slotInterval: 30,
-    openTime: "09:00",
-    closeTime: "17:00",
-  };
-
-  //Format the time
-  let startTime = moment(timeSlot.openTime, "HH:mm");
-
-  //Format the end time
-  let endTime = moment(timeSlot.closeTime, "HH:mm");
-
-  //Times
-  let allTimes = [];
-
-  //Loop over the times - only pushes time with 30 minutes interval
-  while (startTime < endTime) {
-    //Push times
-    allTimes.push(startTime.format("HH:mm"));
-    //Add interval of 30 minutes
-    startTime.add(timeSlot.slotInterval, "minutes");
-  }
-
   // get a list of available times (programmtic list dayjs) dates / times for next 30 days
   // looping through the next 30 days adding 'DD' to an array
   // let availableSlots: any = [];
   // for (let i = 0; i < 30; i++) {
-
-  // availableSlots.push(moment().add(30, 'days').format('DD'));
+  //   availableSlots.push(moment().add(30, "days").format("DD"));
+  // }
 
   // foreach of these 30 days, loop through the available times and push DD - HH:mm to array
 
@@ -125,12 +102,12 @@ export function BookAppointmentForm() {
           Select a date and time
         </h1>
         <div className={`${baseClass}__form-group-date`}>
-          {/* use datepicker component to get date data and send it to mongo database */}
           <DatePicker
+            placeholderText="Select a date..."
             selected={data.date}
             onChange={(date) => setData({ ...data, date: date })}
             showTimeSelect
-            timeFormat="HH:mm"
+            timeFormat="h:mm aa"
             timeIntervals={30}
             minTime={moment("09:00", "HH:mm").toDate()}
             maxTime={moment("16:30", "HH:mm").toDate()}
