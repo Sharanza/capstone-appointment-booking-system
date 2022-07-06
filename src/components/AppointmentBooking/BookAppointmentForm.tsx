@@ -10,6 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 export function BookAppointmentForm() {
   const baseClass = "BookAppointmentForm";
 
+  const [message, setMessage] = useState("");
   const [bookedDates, setBookedDates] = useState([]);
 
   // state is a built-in React object that is used to contain data or information about the component
@@ -43,6 +44,7 @@ export function BookAppointmentForm() {
   function submit(e: any) {
     // prevent stops the submit button from refreshing the page
     e.preventDefault();
+    setMessage(`Your booking was successful!`);
 
     // Axios is a library that is used to make HTTP requests
     // Axios is used to make a POST request to the server
@@ -220,6 +222,7 @@ export function BookAppointmentForm() {
             placeholder="Comments..."
           ></textarea>
         </div>
+        {message}
         <button type="submit" className="submit-btn">
           Book Appointment
         </button>
