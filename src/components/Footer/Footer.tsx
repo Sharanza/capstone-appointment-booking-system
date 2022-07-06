@@ -68,10 +68,10 @@ export function Footer() {
             <h4 className={`${baseClass}__get-in-touch`}>
               <strong>Get in touch</strong>
             </h4>
-            <p className={`${baseClass}__legal-stuff`}>
+            <p className={`${baseClass}__get-in-touch`}>
               Call us: <strong>0808 196 1532</strong>
             </p>
-            <p className={`${baseClass}__legal-stuff`}>
+            <p className={`${baseClass}__get-in-touch`}>
               Email us: <strong>contactus@yourpersonahome.com</strong>
             </p>
             <a href="https://www.facebook.com/yourpersonahome">
