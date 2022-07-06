@@ -18,7 +18,7 @@ export function Banner() {
           <p className={`${baseClass}__book-appointment-paragraph`}>
             {" "}
             Thank you for your interest in our development. Appointments can be
-            booking up to 30 days in advance. Please select a date to view
+            booked up to 30 days in advance. Please select a date to view
             available appointment times.{" "}
           </p>
         </div>
